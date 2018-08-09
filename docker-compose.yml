@@ -1,6 +1,6 @@
 version: '3'
 
-x-common-vars:
+x-environment:
   &common-vars
     - MYSQL_PASSWORD=KeepYourPasswordVerySecure967
     - MYSQL_DATABASE=nextcloud
