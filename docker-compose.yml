@@ -1,5 +1,12 @@
 version: '3'
 
+x-common-vars:
+  &common-vars
+    - MYSQL_PASSWORD=KeepYourPasswordVerySecure967
+    - MYSQL_DATABASE=nextcloud
+    - MYSQL_USER=nextcloud
+    - MYSQL_ROOT_PASSWORD=UseAveryStrongPassword4490
+
 services:
   db:
     image: mariadb
@@ -7,10 +14,7 @@ services:
     restart: always
     volumes:
       - db:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=UseAveryStrongPassword4490
-    env_file:
-      - db.env
+    environment: *common-vars
 
   redis:
     image: redis
@@ -23,9 +27,8 @@ services:
       - /srv/docker/containers/nextcloud-app/redis.config.php:/usr/src/nextcloud/config/redis.config.php
       - nextcloud:/var/www/html
     environment:
+      *common-vars
       - MYSQL_HOST=db
-    env_file:
-      - db.env
     depends_on:
       - db
       - redis
