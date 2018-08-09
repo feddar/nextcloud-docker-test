@@ -45,7 +45,7 @@ services:
       - app
 
   cron:
-    build: ./app
+    image: nextcloud:fpm
     restart: always
     volumes:
       - nextcloud:/var/www/html
