@@ -1,4 +1,4 @@
-version: '3'
+version: '3.1'
 
 x-environment: &common-vars
     MYSQL_PASSWORD: KeepYourPasswordVerySecure967
