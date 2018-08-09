@@ -1,11 +1,10 @@
 version: '3'
 
-x-environment:
-  &common-vars
-    - MYSQL_PASSWORD=KeepYourPasswordVerySecure967
-    - MYSQL_DATABASE=nextcloud
-    - MYSQL_USER=nextcloud
-    - MYSQL_ROOT_PASSWORD=UseAveryStrongPassword4490
+x-environment: &common-vars
+    MYSQL_PASSWORD: KeepYourPasswordVerySecure967
+    MYSQL_DATABASE: nextcloud
+    MYSQL_USER: nextcloud
+    MYSQL_ROOT_PASSWORD: UseAveryStrongPassword4490
 
 services:
   db:
