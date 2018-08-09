@@ -15,7 +15,7 @@ services:
     volumes:
       - db:/var/lib/mysql
     environment:
-      <<: *common-vars
+      << : *common-vars
 
   redis:
     image: redis
@@ -28,7 +28,7 @@ services:
       - /srv/docker/containers/nextcloud-app/redis.config.php:/usr/src/nextcloud/config/redis.config.php
       - nextcloud:/var/www/html
     environment:
-      <<: *common-vars
+      << : *common-vars
       - MYSQL_HOST=db
     depends_on:
       - db
