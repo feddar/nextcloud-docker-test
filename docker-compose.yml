@@ -17,9 +17,10 @@ services:
     restart: always
 
   app:
-    build: ./app
+    image: nextcloud:fpm
     restart: always
     volumes:
+      - /srv/docker/containers/nextcloud-app/redis.config.php:/usr/src/nextcloud/config/redis.config.php
       - nextcloud:/var/www/html
     environment:
       - MYSQL_HOST=db
