@@ -37,7 +37,7 @@ services:
     image: nginx
     restart: always
     ports:
-      - 8080:80
+      - "8080:80"
     volumes:
       - /srv/docker/containers/nextcloud-app/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - nextcloud:/var/www/html:ro
