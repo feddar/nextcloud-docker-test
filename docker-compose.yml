@@ -54,6 +54,17 @@ services:
       - db
       - redis
 
+  onlyoffice:
+    image: onlyoffice/documentserver:latest
+    stdin_open: true
+    tty: true
+    restart: always
+    volumes:
+      - onlyoffice_data:/var/www/onlyoffice/Data
+      - onlyoffice_log:/var/log/onlyoffice
+
 volumes:
   db:
   nextcloud:
+  onlyoffice_data:
+  onlyoffice_log:
