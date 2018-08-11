@@ -62,6 +62,9 @@ services:
     stdin_open: true
     tty: true
     restart: always
+    ports:
+      - 8081:80
+      - 8443:443
     volumes:
       - onlyoffice_data:/var/www/onlyoffice/Data
       - onlyoffice_log:/var/log/onlyoffice
