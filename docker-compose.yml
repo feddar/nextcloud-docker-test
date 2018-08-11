@@ -26,6 +26,9 @@ services:
     volumes:
       - /srv/data/docker/containers/nextcloud-app/redis.config.php:/usr/src/nextcloud/config/redis.config.php
       - nextcloud:/var/www/html
+      - /srv/data/docker/containers/nextcloud-app/nextcloud/data:/var/www/html/data
+      - /srv/data/docker/containers/nextcloud-app/nextcloud/apps:/var/www/html/apps
+      - /srv/data/docker/containers/nextcloud-app/nextcloud/config:/var/www/html/config
     environment:
       << : *common-vars
       MYSQL_HOST : db
