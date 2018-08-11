@@ -12,7 +12,7 @@ services:
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     restart: always
     volumes:
-      - db:/var/lib/mysql
+      - /srv/data/docker/containers/nextcloud-app/mariadb/db:/var/lib/mysql
     environment:
       << : *common-vars
 
@@ -64,7 +64,6 @@ services:
       - onlyoffice_log:/var/log/onlyoffice
 
 volumes:
-  db:
   nextcloud:
   onlyoffice_data:
   onlyoffice_log:
