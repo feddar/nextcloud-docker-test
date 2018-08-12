@@ -68,6 +68,8 @@ services:
     volumes:
       - onlyoffice_data:/var/www/onlyoffice/Data
       - onlyoffice_log:/var/log/onlyoffice
+    depends_on:
+      - app
 
 volumes:
   nextcloud:
