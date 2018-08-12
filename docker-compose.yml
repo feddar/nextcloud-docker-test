@@ -42,8 +42,12 @@ services:
     ports:
       - 8080:80
     volumes:
-      - /srv/data/docker/containers/nextcloud-app/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - nextcloud:/var/www/html:ro
+      - /srv/data/docker/containers/nextcloud-app/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /srv/data/docker/containers/nextcloud-app/nextcloud/data:/var/www/html/data
+      - /srv/data/docker/containers/nextcloud-app/nextcloud/apps:/var/www/html/apps
+      - /srv/data/docker/containers/nextcloud-app/nextcloud/config:/var/www/html/config
+      - /srv/data/docker/containers/nextcloud-app/redis.config.php:/usr/src/nextcloud/config/redis.config.php
     depends_on:
       - app
 
@@ -52,6 +56,10 @@ services:
     restart: always
     volumes:
       - nextcloud:/var/www/html
+      - /srv/data/docker/containers/nextcloud-app/nextcloud/data:/var/www/html/data
+      - /srv/data/docker/containers/nextcloud-app/nextcloud/apps:/var/www/html/apps
+      - /srv/data/docker/containers/nextcloud-app/nextcloud/config:/var/www/html/config
+      - /srv/data/docker/containers/nextcloud-app/redis.config.php:/usr/src/nextcloud/config/redis.config.php
     entrypoint: /cron.sh
     depends_on:
       - db
