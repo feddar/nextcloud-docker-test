@@ -75,8 +75,8 @@ services:
     ports:
       - 8081:80
       - 8443:443
-    volumes:
-      - /srv/data/docker/containers/nextcloud-app/onlyoffice/data:/var/www/onlyoffice/Data
+    #volumes:
+      #- /srv/data/docker/containers/nextcloud-app/onlyoffice/data:/var/www/onlyoffice/Data
       #- onlyoffice_log:/var/log/onlyoffice
     depends_on:
       - app
