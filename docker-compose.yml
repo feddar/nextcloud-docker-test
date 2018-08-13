@@ -5,6 +5,8 @@ x-environment: &common-vars
     MYSQL_DATABASE: 
     MYSQL_USER: 
     MYSQL_ROOT_PASSWORD: 
+    TZ: Europe/Rome
+    UPLOAD_MAX_SIZE: 20G
 
 services:
   db:
