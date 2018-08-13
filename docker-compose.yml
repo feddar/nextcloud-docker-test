@@ -74,12 +74,11 @@ services:
       - 8081:80
       - 8443:443
     volumes:
-      - onlyoffice_data:/var/www/onlyoffice/Data
+      - /srv/data/docker/containers/nextcloud-app/onlyoffice/data:/var/www/onlyoffice/Data
       - onlyoffice_log:/var/log/onlyoffice
     depends_on:
       - app
 
 volumes:
   nextcloud:
-  onlyoffice_data:
   onlyoffice_log:
