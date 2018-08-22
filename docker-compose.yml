@@ -19,7 +19,7 @@ services:
       << : *common-vars
 
   redis:
-    image: redis
+    image: redis:alpine
     restart: always
 
   app:
