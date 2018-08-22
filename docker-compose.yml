@@ -39,7 +39,7 @@ services:
       - redis
 
   web:
-    image: nginx
+    image: nginx:stable-alpine
     restart: always
     ports:
       - 8080:80
